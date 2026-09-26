@@ -22,7 +22,7 @@ export default function Home() {
         <div className="hero-caption"><span className="tiny-cross" aria-hidden="true">+</span><p>Hay ideas que no caben<br />en un molde. <strong>Les damos forma.</strong></p></div>
         <div className="hero-side-note" aria-hidden="true">MM—001<br />FUERA DEL MOLDE.<br />DENTRO DE LA REALIDAD.</div>
         <a className="hero-cta button" href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a>
-        <div className="hero-bottom"><p>Dirección creativa, marcas y productos digitales<br />con una razón para existir.</p><a href="#maquina">BAJA. ESTO SOLO EMPIEZA. <span aria-hidden="true">↓</span></a></div>
+        <div className="hero-bottom"><p>Dirección creativa, marcas y productos digitales<br /> con una razón para existir.</p><a href="#maquina">BAJA. ESTO SOLO EMPIEZA. <span aria-hidden="true">↓</span></a></div>
       </section>
 
       <div className="brand-strip" aria-label="De la idea a la realidad"><span>IDEA → FORMA → REALIDAD</span><span>INDEPENDENT MIND. HANDS ON.</span><span>MAKE IDEAS WORK.™ <span aria-hidden="true">↗</span></span></div>

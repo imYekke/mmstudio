@@ -80,7 +80,7 @@ export function SelectedWork() {
   const showProject = (project: typeof projects[number]) => setDetail({ eyebrow: project.category, title: project.name, paragraphs: [project.title, project.description], project: true });
   return <section className="work-section section-pad" id="proyectos" aria-labelledby="work-title">
     <div className="section-meta"><span>04 / SELECTED WORK</span><span>UNA IDEA. SU PROPIO MUNDO.</span></div>
-    <div className="section-heading"><h2 id="work-title">HECHO CON<br /><span className="muted">INTENCIÓN.</span></h2><p>Distintos puntos de partida.<br />Una misma obsesión:<br />que tenga sentido y funcione.</p></div>
+    <div className="section-heading"><h2 id="work-title">HECHO CON<br /><span className="muted">INTENCIÓN.</span></h2><p>Distintos puntos de partida.<br /> Una misma obsesión:<br /> que tenga sentido y funcione.</p></div>
     <div className="work-posters">
       <button className="project-poster poster-running" onClick={() => showProject(projects[0])} aria-label="Ver avance de Juan Domingo">
         <span className="poster-top"><span>JUAN DOMINGO</span><span>RUNNING CULTURE</span></span>
