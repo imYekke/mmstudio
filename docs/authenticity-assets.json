@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-26",
+  "assets": [
+    {
+      "source": "/Users/miros/Documents/TTCOACH/public/images/studio/mm-works-signature.png",
+      "destination": "public/brand/mm-works-official.png",
+      "sha256": "0de61aac5e99e4321279d4d19585a02880367ec7bc628c7f9b9c150fb25341c5",
+      "identical": true
+    },
+    {
+      "source": "/Users/miros/Documents/MM WORKS/01_CLIENTES/JUAN_DOMINGO/04_DESARROLLO/public/images/runner-park-poster.jpg",
+      "destination": "public/projects/juan-domingo-hero.jpg",
+      "sha256": "79bf62a6fd81e0b8d800e3d425115a8bc097f4c82da0b9b2a86435b0ab1e8e0b",
+      "identical": true
+    },
+    {
+      "source": "/Users/miros/Documents/OPEN TOURNAMENT APP MM WORKS/docs/verification/foundation-1b1/after/fundamentos-1440.png",
+      "destination": "public/projects/brket-foundation.png",
+      "sha256": "c8e19f4f0b518c0bc732279feda84761d6df416874d7ba2b4c2354b36443ab8b",
+      "identical": true
+    },
+    {
+      "source": "/Users/miros/Documents/MMWORKS MARKETING/ASSETS/MM-POV-003-FEED-01-08/MM-POV-003-01.png",
+      "destination": "public/world/que-se-adapte-la-web.png",
+      "sha256": "4b2ea897a332bfe3698afc1ed6b8777a6b831914aa08333409c21c49695aed8e",
+      "identical": true
+    },
+    {
+      "source": "/Users/miros/Documents/MMWORKS MARKETING/ASSETS/MM-BREAKDOWN-001-FINAL-V2/FEED/MM-BREAKDOWN-001-01.png",
+      "destination": "public/world/colores-que-trabajan.png",
+      "sha256": "5b8f22ef1c310af1ba093e01de5a35cd594a17da06f2fd5b1460e753fcb5a942",
+      "identical": true
+    }
+  ]
+}

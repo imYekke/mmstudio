@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-26",
+  "productionBuild": "passed",
+  "staticHtml": {
+    "sectionsInApprovedOrder": [
+      "inicio",
+      "maquina",
+      "origen",
+      "proyectos",
+      "disciplinas",
+      "mindset",
+      "world",
+      "proof",
+      "contacto"
+    ],
+    "h1Count": 1,
+    "language": "es",
+    "uniqueIds": 31,
+    "internalAnchors": "all resolve",
+    "imageSources": 9,
+    "imageSourcesExist": true,
+    "mailtoLinksChecked": 5,
+    "officialLogoContactLinks": 2,
+    "noindex": true
+  },
+  "originalAssetsVerified": 5,
+  "coreImagesUnchanged": true,
+  "heroAndNothingMotionUnchanged": true,
+  "v1Head": "e83e33d1ec80fb82f84c0a7c94781f0f2e257493",
+  "v1Clean": true,
+  "visualDesktopMobile": "blocked: browser security policy verification unavailable; not bypassed",
+  "interactiveBrowserChecks": "not run in V2"
+}

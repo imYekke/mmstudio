@@ -1,57 +1,70 @@
-# MM WORKS — Home v1
+# MM WORKS — V2 / Authenticity Pass
 
-Primera versión navegable de la web propia de MM WORKS. Desktop primero, contenido comercial en español y nueve secciones en el orden aprobado.
+Home con marca oficial, copy comercial en español y proyectos documentados. Mantiene las nueve secciones y las tres piezas centrales de V1.
+
+V1 permanece bloqueada en `../mmworks/`, etiqueta `v1-golden-master`, commit `e83e33d1ec80fb82f84c0a7c94781f0f2e257493`. Los cambios de esta versión pertenecen a la rama `v2`. **Candidata a revisión:** comparación visual de escritorio y móvil pendiente por un bloqueo del navegador del entorno.
 
 ## Desarrollo local
 
-Requiere Node.js 22 o posterior.
+Requiere Node.js 22 o posterior. Usar el puerto 3101 para V2; el 3100 queda reservado a V1. Dependencias y cachés independientes.
 
 ```sh
 npm ci
-npm run dev
+npm run dev -- --port 3101
 ```
 
-Abrir http://127.0.0.1:3100. El servidor se limita a la máquina local.
+Abrir http://127.0.0.1:3101. Servidor limitado a la máquina local.
 
 ```sh
 npm run typecheck
 npm run build
-npm start
+npm start -- --port 3101
 ```
 
-`npm start` utiliza el mismo puerto que desarrollo; detener primero `npm run dev` si está activo.
+Detener el servidor de desarrollo de V2 antes de ejecutar `npm start` en el mismo puerto.
 
 ## Base técnica
 
-- Next.js App Router y TypeScript estricto.
-- Tailwind CSS 4 y tokens visuales propios.
-- Motion para movimiento ligado al scroll, con preferencia de movimiento reducido.
-- Tipografías locales: Barlow Condensed y Manrope; sin peticiones a Google Fonts.
-- Imágenes optimizadas con Next Image. La imagen de portada carga inmediatamente; las demás, bajo demanda.
-- Navegación por anclas, acordeón accesible y diálogos nativos con Escape y retorno de foco.
-- Correo preparado y editable en todos los enlaces de contacto. No se envía nada desde la web.
-- Sin backend, formularios de envío, cookies de seguimiento ni dependencias de servicios externos.
+- Next.js App Router, TypeScript estricto, Tailwind CSS 4 y Motion.
+- Tipografías locales Barlow Condensed y Manrope; sin llamadas a Google Fonts.
+- Next Image, carga diferida y preferencia de movimiento reducido.
+- Navegación por anclas, acordeón y diálogos nativos.
+- Logo y contacto abren un correo preparado y editable; la web no envía mensajes.
+- Sin backend, seguimiento ni dependencia de servicios externos.
 
-## Contenido y diseño
+## Contenido
 
 - `src/app/page.tsx`: estructura de las nueve secciones.
-- `src/app/globals.css`: sistema visual y adaptación a pantallas.
+- `src/app/globals.css`: sistema visual y adaptación.
 - `src/lib/content.ts`: proyectos, disciplinas, artículos y contacto.
 - `src/components/interactive.tsx`: navegación, movimiento y detalles.
-- `docs/direction.md`: dirección creativa y copy inicial.
-- `docs/image-prompts.md`: prompts y procedencia de las imágenes.
-- `public/images/`: los dos assets generados para esta versión.
+- `public/images/`: las dos imágenes conceptuales de V1, conservadas.
+- `public/brand/`: firma oficial sin alterar el original.
+- `public/projects/`: visual de Juan Domingo y captura real de BRKET.
+- `public/world/`: portadas del archivo creativo de MM WORKS.
 
-## Pendiente de contenido definitivo
+## Estado de los proyectos
 
-El original de Rhino/logo no estaba adjunto. La firma tipográfica es provisional. Juan Domingo y BRKET se muestran mediante composiciones conceptuales claramente identificadas; el archivo incluye también TramiCalma, Hausfix y BuddyPádel. Los detalles describen territorios del proyecto, no entregables verificados. Sustituirlos por material original y casos aprobados antes de publicar. PROOF no inventa métricas, testimonios ni resultados.
+- Juan Domingo: web en desarrollo, ADN Runner implementado y catálogo de demostración pendiente de validar.
+- BRKET: arquitectura, sistema de diseño y componentes. La gestión de torneos no se presenta como terminada.
+- TramiCalma: web pública de ayuda técnica, diagnósticos y guías.
+- Hausfix: web de servicios locales en francés. Sin resultados SEO atribuidos ni publicación actual verificada.
+- BuddyPadel: producto de reservas con piloto en preparación.
+
+Las fichas indican alcance y estado. No incluyen métricas comerciales, testimonios ni clientes inventados. MM//WORLD diferencia piezas conceptuales de marca y proyectos.
+
+## Registro de revisión
+
+- `docs/v2-comparison.md`: cambios frente a V1 y decisión pendiente.
+- `docs/authenticity-sources.md`: fuentes y límites de cada afirmación.
+- `docs/authenticity-assets.json`: procedencia y huellas de los archivos incorporados.
+- `docs/authenticity-validation.md`: comprobaciones de esta revisión.
+- `docs/direction.md`, `docs/image-prompts.md` y `docs/validation.md`: documentos históricos de V1; sus pruebas visuales no validan V2.
 
 ## GitHub y Vercel
 
-El código está preparado para un repositorio propio cuya raíz sea esta carpeta. Incluye comprobación de tipos y compilación en GitHub Actions. No se ha creado ni conectado ningún repositorio remoto.
+Incluye comprobación de tipos y compilación en GitHub Actions. No se ha creado ni conectado un repositorio remoto ni se ha desplegado.
 
-Tras autorización, subir el repositorio a GitHub y conectarlo a Vercel usando el preset Next.js, instalación `npm ci`, compilación `npm run build` y Node.js 22. No requiere variables de entorno. Si se sube la carpeta contenedora, seleccionar `mmworks` como Root Directory y adaptar el workflow a esa ubicación.
+Tras revisión y autorización expresa: preset Next.js, instalación `npm ci`, compilación `npm run build`, Node.js 22 y raíz del repositorio en la carpeta de la versión aprobada. No requiere variables de entorno. Si se sube una carpeta contenedora, adaptar Root Directory y el workflow.
 
-La versión actual incluye `noindex, nofollow`. Al aprobar la publicación definitiva, reemplazarlo y añadir el dominio confirmado, canonical y sitemap. La compilación de producción se ha validado localmente; no se ha desplegado.
-
-Referencias técnicas: [Next.js](https://nextjs.org/docs/app/getting-started/installation), [Motion y movimiento reducido](https://motion.dev/docs/react-use-reduced-motion).
+Se conserva `noindex, nofollow`. Dominio definitivo, canonical, sitemap e indexación se resolverán cuando se autorice publicar.

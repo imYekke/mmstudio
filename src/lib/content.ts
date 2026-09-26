@@ -1,12 +1,57 @@
 export const contactEmail = "work.mmstudio@gmail.com";
 export const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Información sobre un proyecto")}&body=${encodeURIComponent("Hola, Miros:\n\nHe visto tu trabajo en la web de MM WORKS y me gustaría pedirte información para un proyecto.\n\nMi idea es:\n\n¿Podemos hablar sobre las opciones y el presupuesto?\n\nGracias.")}`;
 
-export const projects = [
-  { id: "juan-domingo", name: "Juan Domingo", category: "Experiencia digital / Running culture", title: "La cultura del running también se corre en digital.", description: "Una tienda de running, una comunidad y todo lo que ocurre entre una salida y la siguiente. El territorio del proyecto une comercio, contenido y cultura del deporte.", color: "orange" },
-  { id: "brket", name: "BRKET", category: "Producto digital / Sports tech", title: "El juego empieza mucho antes del partido.", description: "Organizar la competición también forma parte de la experiencia. BRKET lleva el foco a los torneos y al producto que conecta cada encuentro.", color: "violet" },
-  { id: "tramicalma", name: "TramiCalma", category: "Servicio digital / SEO", title: "Menos vueltas. Más claridad.", description: "Un servicio digital que parte de una necesidad concreta: entender el siguiente paso. Claridad de contenido, presencia en buscadores y una experiencia fácil de seguir.", color: "sage" },
-  { id: "hausfix", name: "Hausfix", category: "Presencia digital / Negocio local", title: "Estar donde empieza la búsqueda.", description: "Presencia digital conectada con la realidad de un negocio local: explicar lo que hace, facilitar que lo encuentren y abrir una conversación.", color: "orange" },
-  { id: "buddypadel", name: "BuddyPádel", category: "Producto / Software para clubes", title: "Más tiempo en la pista.", description: "El club como punto de partida de un producto digital. Una exploración de las herramientas que acompañan su día a día y la experiencia de sus jugadores.", color: "violet" },
+export type Project = {
+  id: string; name: string; category: string; title: string; description: string;
+  status: string; scope: string[]; note: string;
+  image?: { src: string; alt: string; width: number; height: number; caption: string };
+  url?: string;
+};
+
+export const projects: Project[] = [
+  {
+    id: "juan-domingo", name: "Juan Domingo", category: "Web / Cultura del running",
+    title: "No corres solo. Tampoco al elegir tus zapatillas.",
+    description: "Una experiencia para Juan Domingo Running, en Puerto Lumbreras. El corredor descubre su perfil, explora una selección orientativa y prepara una conversación con Juan. La comunidad forma parte del recorrido.",
+    status: "Web en desarrollo",
+    scope: ["Dirección visual y desarrollo web", "Perfil interactivo ADN Runner", "Comunidad y contacto por WhatsApp"],
+    note: "Versión en desarrollo. El perfil interactivo ya funciona; la selección de zapatillas utiliza modelos de demostración y sigue pendiente de validar con el catálogo real.",
+    image: { src: "/projects/juan-domingo-hero.jpg", alt: "Fotograma del corredor utilizado en la portada de Juan Domingo Running.", width: 1920, height: 1080, caption: "Visual de la portada del proyecto · Juan Domingo Running" },
+  },
+  {
+    id: "brket", name: "BRKET", category: "Producto / Sistema de diseño",
+    title: "Primero, una base que aguante el producto.",
+    description: "BRKET es un proyecto de plataforma para clubes de pádel. El trabajo actual define su arquitectura y su sistema de diseño: color, tipografía, componentes y estados de interacción.",
+    status: "Base de producto en desarrollo",
+    scope: ["Arquitectura modular", "Sistema de diseño y componentes", "Catálogo de interfaz y revisión de accesibilidad"],
+    note: "Fase actual: sistema de diseño y componentes. La imagen muestra esta base de trabajo. La gestión de torneos forma parte de las siguientes etapas.",
+    image: { src: "/projects/brket-foundation.png", alt: "Captura real de los fundamentos del sistema de diseño BRKET: paleta, tipografía y espaciado.", width: 1216, height: 1091, caption: "Captura del sistema de diseño · BRKET Foundation" },
+  },
+  {
+    id: "tramicalma", name: "TramiCalma", category: "Web / Contenido y diagnóstico",
+    title: "Del bloqueo digital al siguiente paso.",
+    description: "Una herramienta independiente de ayuda con certificado digital, AutoFirma y trámites online. Combina preguntas guiadas, instrucciones claras y enlaces a fuentes oficiales, sin pedir certificados ni credenciales.",
+    status: "Web pública",
+    scope: ["Estructura de contenido y navegación", "Asistentes de diagnóstico", "Guías técnicas y organización SEO"],
+    note: "Disponible en tramicalma.es. Puedes recorrer los diagnósticos y consultar las guías. Es un proyecto independiente de las administraciones públicas.",
+    url: "https://tramicalma.es/",
+  },
+  {
+    id: "hausfix", name: "Hausfix", category: "Web / Servicios locales",
+    title: "Una urgencia. Un camino claro al contacto.",
+    description: "Web en francés para Hausfix Romandie, un negocio de cerrajería y fontanería en Valais y la Riviera vaudoise. La información se organiza por servicio y zona, con acceso directo al contacto.",
+    status: "Diseño y desarrollo web",
+    scope: ["Presentación de servicios y cobertura local", "Jerarquía de contenido en francés", "Contacto y estructura para búsquedas locales"],
+    note: "El trabajo se centra en presentar los servicios y facilitar el contacto en el ámbito local.",
+  },
+  {
+    id: "buddypadel", name: "BuddyPadel", category: "Producto / Gestión de clubes",
+    title: "La reserva y el día a día del club, en el mismo sitio.",
+    description: "Un producto para gestionar reservas de pistas de pádel. Incluye el recorrido del jugador y un panel para la agenda, las reservas, los bloqueos y los cobros del club.",
+    status: "Piloto en preparación",
+    scope: ["Cuenta del jugador, disponibilidad y reservas", "Agenda y operaciones del club", "Permisos y reglas de reserva"],
+    note: "Piloto en preparación. El recorrido principal está implementado; la validación completa de las reservas es el siguiente paso antes de abrirlo sin supervisión.",
+  },
 ];
 
 export const disciplines = [
@@ -18,7 +63,7 @@ export const disciplines = [
 ];
 
 export const articles = [
-  { id: "idea-first", category: "MM//POV", title: "Sin una idea, solo es decoración.", label: "01 / Punto de vista", paragraphs: ["Antes de elegir una tipografía, hay una pregunta: ¿qué tiene que decir esta pieza? Si no podemos responderla en una frase, todavía no toca diseñar.", "Una idea no es una capa de explicación que añadimos al final. Es lo que decide el encuadre, el ritmo, el material y también lo que sobra. Hace que dos piezas distintas pertenezcan al mismo mundo.", "Nuestra prueba es simple: quitar los efectos. Si lo que queda sigue diciendo algo, hay una base sobre la que trabajar."] },
-  { id: "break-format", category: "MM//BREAKDOWN", title: "Una idea que no cabe en el molde.", label: "02 / Dentro del proceso", paragraphs: ["La portada de MM WORKS nace de una tensión: una estructura rígida y una idea que necesita pasar. La placa representa el formato. La pieza azul, lo que todavía no tiene sitio.", "La imagen se ha desarrollado con generación de imagen y dirección creativa. La luz, el material y la presión cuentan la misma historia. No hace falta añadir diez símbolos si un solo gesto explica el concepto.", "Después llega la web: la tipografía permanece legible, el scroll sigue siendo natural y la imagen deja espacio al mensaje. El concepto tiene que sobrevivir al uso."] },
-  { id: "physical-digital", category: "MM//LAB", title: "De la materia a la pantalla.", label: "03 / Experimento visual", paragraphs: ["El metal tiene peso. El papel tiene pliegues. Una pantalla no tiene por qué borrar esas cualidades. Nos interesa traducirlas, no simular un escritorio lleno de objetos.", "En THE IDEA MACHINE, una hoja arrugada entra en una prensa y sale convertida en una pieza sólida. Es una imagen conceptual, no una máquina real: una forma de contar cómo una intuición toma estructura.", "La mezcla funciona cuando cada material tiene una razón para estar. Lo físico pone la tensión; lo digital permite recorrerla."] },
+  { id: "que-se-adapte", category: "MM//POV", title: "Que se adapte la web.", label: "MM//POV 003 · Del archivo", image: "/world/que-se-adapte-la-web.png", alt: "Pieza original MM//POV 003: una estructura se adapta al contorno de una cafetera.", paragraphs: ["El negocio tiene una forma de trabajar. La web tiene que responder a ella. En MM//POV 003, una matriz de piezas se adapta al perfil de una cafetera intacta: el soporte cambia, el objeto conserva su función.", "La campaña parte de una pregunta concreta: ¿qué tiene que hacer esta web? Facilitar el contacto, permitir una reserva o ayudar a empezar piden decisiones distintas.", "Esta portada pertenece al archivo creativo de MM WORKS. Es una pieza conceptual de marca; no representa un cliente ni un resultado comercial."] },
+  { id: "colores-que-trabajan", category: "MM//BREAKDOWN", title: "Colores que trabajan.", label: "MM//BREAKDOWN 001 · Del archivo", image: "/world/colores-que-trabajan.png", alt: "Pieza original Colores que trabajan: una piedra suspendida por cintas naranjas sobre un fondo verde.", paragraphs: ["El color puede ordenar, señalar o dar carácter. MM//BREAKDOWN 001 explora cinco direcciones de color a través de materiales, objetos y composiciones con una función visual clara.", "La portada cruza el peso de una piedra con la tensión de unas cintas. Verde, naranja y oscuro se reparten el fondo, la acción y la lectura.", "Es una exploración de dirección creativa del archivo de MM WORKS. Las paletas son propuestas visuales, no casos de clientes ni pruebas de rendimiento."] },
+  { id: "physical-digital", category: "MM//LAB", title: "De la materia a la pantalla.", label: "La Home · Dentro del proceso", image: "/images/idea-machine.png", alt: "La máquina de ideas creada para la Home de MM WORKS.", paragraphs: ["El metal tiene peso. El papel tiene pliegues. Una pantalla no tiene por qué borrar esas cualidades. Nos interesa traducirlas con una intención.", "En THE IDEA MACHINE, una hoja arrugada entra en una prensa y sale convertida en una pieza sólida. La imagen se creó con generación de imagen y dirección creativa para esta Home: cuenta cómo una intuición toma forma.", "Es una máquina conceptual. Su trabajo es explicar una idea; el trabajo de la web es ayudarte a entender qué hacemos y empezar una conversación."] },
 ];
